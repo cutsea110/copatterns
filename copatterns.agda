@@ -46,4 +46,4 @@ tl (merge (fst , snd)) = merge (snd , tl fst)
 
 merge-split-id : ∀ {A} (xs : Stream A) → merge (split xs) ≈ xs
 hd-≈ (merge-split-id xs) = refl
-tl-≈ (merge-split-id xs) = record { hd-≈ = refl ; tl-≈ = merge-split-id (tl (tl xs)) }
+tl-≈ (merge-split-id xs) = merge-split-id (tl xs)
