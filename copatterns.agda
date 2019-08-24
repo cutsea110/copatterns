@@ -26,9 +26,9 @@ triv : repeat 0 ≈ repeat 0
 hd-≈ triv = refl
 tl-≈ triv = triv
 
-lem : repeat 0 ≈ record { hd = 0 ; tl = repeat 0 }
-hd-≈ lem = refl
-tl-≈ lem = record { hd-≈ = refl ; tl-≈ = triv }
+lemma : repeat 0 ≈ record { hd = 0 ; tl = repeat 0 }
+hd-≈ lemma = refl
+tl-≈ lemma = record { hd-≈ = refl ; tl-≈ = triv }
 
 even : ∀ {A} → Stream A → Stream A
 hd (even xs) = hd xs
@@ -46,4 +46,4 @@ tl (merge (fst , snd)) = merge (snd , tl fst)
 
 merge-split-id : ∀ {A} (xs : Stream A) → merge (split xs) ≈ xs
 hd-≈ (merge-split-id xs) = refl
-tl-≈ (merge-split-id xs) = record { hd-≈ = refl ; tl-≈ = {!!} }
+tl-≈ (merge-split-id xs) = record { hd-≈ = refl ; tl-≈ = merge-split-id (tl (tl xs)) }
