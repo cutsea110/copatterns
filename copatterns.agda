@@ -1,3 +1,4 @@
+{-# OPTIONS --sized-types #-}
 module copatterns where
 
 open import Data.Nat

@@ -1,3 +1,5 @@
+{-# OPTIONS --sized-types #-}
+
 -- | ref.) https://gist.github.com/gallais/e0e2597fa3393f6b12d7c35361d0d74f
 -- | thread : https://stackoverflow.com/questions/55347900/agda-simplifying-recursive-definitions-involving-thunk
 open import Size
